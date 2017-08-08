@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<script>
+	function addRow()
+	{
+		var txtname = document.getElementById("txtname").value;
+		var txtaddress = document.getElementById("txtaddress").value;
+		var txtmobileno = document.getElementById("txtmobileno").value;
+		var txtemailid = document.getElementById("txtemailid").value;
+		var gender = document.querySelector('input[name="gender"]:checked').value;
+
+		var removeRow=document.createElement("BUTTON");
+		var text=document.createTextNode("Remove");
+		removeRow.appendChild(text);
+
+		var editRow=document.createElement("BUTTON");
+		var text1=document.createTextNode("Edit");
+		editRow.appendChild(text1);
+
+		var table = document.getElementsByTagName('table')[0];
+
+		var newRow = table.insertRow(1);
+
+		var cel1 = newRow.insertCell(0);
+		var cel2 = newRow.insertCell(1);
+		var cel3 = newRow.insertCell(2);
+		var cel4 = newRow.insertCell(3);
+		var cel5 = newRow.insertCell(4);
+		var cel6 = newRow.insertCell(5);
+		var cel7 = newRow.insertCell(6);
+
+		cel1.innerHTML = txtname;
+		cel2.innerHTML = txtaddress;
+		cel3.innerHTML = txtmobileno;
+		cel4.innerHTML = txtemailid;
+		cel5.innerHTML = gender;
+		cel6.appendChild(editRow);
+		cel7.appendChild(removeRow);
+	}
+	</script>
+</head>
+<body>
+			<label>Name:</label>
+			<input type="text" id="txtname" placeholder="Enter your Name"><br>
+			<label>Address:</label>
+			<input type="text" id="txtaddress" placeholder="Enter your Address"><br>
+			<label>Mobile No:</label>
+			<input type="text" id="txtmobileno" placeholder="Enter your Mobile No"><br>
+			<label>Email ID:</label>
+			<input type="text" id="txtemailid" placeholder="Enter your Email ID"><br>
+			<label>Gender:</label>
+			<input type="radio" name="gender" value="Male">Male<br>
+			<input type="radio" name="gender" value="Female">Female<br>
+			<input type="radio" name="gender" value="Other">Other<br>
+			<button onclick="addRow();">Add</button>
+<table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Mobile No</th>
+			<th>Email Id</th>
+			<th>Gender</th>
+		</tr>
+</table>
+</body>
+</html>
